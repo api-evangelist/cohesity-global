@@ -1,0 +1,44 @@
+generated: '2026-07-18'
+method: searched
+source: https://developer.cohesity.com/ and https://github.com/cohesity/cohesity_sdk
+docs: https://developer.cohesity.com/docs/get-started-apps.html
+summary:
+  types:
+  - apiKey
+  - http
+  - oauth2
+  - openIdConnect
+  api_key_in:
+  - header
+  oauth2_flows:
+  - authorizationCode
+  notes: Cohesity Helios uses an API key presented in the request header for programmatic access, and
+    also runs a full OAuth2/OIDC authorization-code (PKCE S256) flow discoverable at
+    https://helios.cohesity.com/.well-known/openid-configuration. On-premises Cohesity clusters
+    authenticate with username/password (plus AD/LDAP domain) to obtain a session token used on
+    subsequent calls.
+schemes:
+- name: HeliosApiKey
+  type: apiKey
+  in: header
+  parameter: apiKey
+  applies_to: Helios (multi-cluster SaaS control plane)
+  source: https://github.com/cohesity/cohesity_sdk
+- name: HeliosOAuth2
+  type: oauth2
+  flow: authorizationCode
+  authorizationUrl: https://helios.cohesity.com/oauth2/authorize
+  tokenUrl: https://helios.cohesity.com/oauth2/token
+  scopes: [openid, email, profile, cohesity_user, cohesity_viewer, cohesity_gaia_viewer]
+  applies_to: Helios (multi-cluster SaaS control plane)
+  source: https://helios.cohesity.com/.well-known/openid-configuration
+- name: HeliosOIDC
+  type: openIdConnect
+  openIdConnectUrl: https://helios.cohesity.com/.well-known/openid-configuration
+  applies_to: Helios (multi-cluster SaaS control plane)
+  source: https://helios.cohesity.com/.well-known/openid-configuration
+- name: ClusterCredentials
+  type: http
+  scheme: basic
+  applies_to: On-premises Cohesity cluster (VIP + username/password + domain, exchanged for a session token)
+  source: https://github.com/cohesity/cohesity_sdk
