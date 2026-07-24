@@ -1,0 +1,36 @@
+# Cohesity Global
+
+> Cohesity is an AI-powered data security and management platform that consolidates backup and recovery, cyber resilience, threat defense, and data insights across cloud, on-premises, and SaaS environments. It exposes RESTful Helios and Cluster APIs plus first-party Python, Go, PowerShell, Ansible, and Terraform tooling for automating data protection against 1,000+ workloads.
+
+## APIs
+
+- [Cohesity Helios and Cluster REST API](https://developer.cohesity.com/): Data management, backup and recovery, cyber resilience, reporting, and site continuity operations. Base URL https://helios.cohesity.com/v2/.
+
+## Docs
+
+- [Developer Portal](https://developer.cohesity.com/)
+- [API Documentation](https://developer.cohesity.com/apidocs/versions)
+- [API Reference / Versions](https://developer.cohesity.com/versions.html)
+- [Getting Started with Apps](https://developer.cohesity.com/docs/get-started-apps.html)
+
+## SDKs and Tooling
+
+- [Python SDK (cohesity-sdk)](https://github.com/cohesity/cohesity_sdk) — pip install cohesity-sdk
+- [Python Management SDK](https://github.com/cohesity/management-sdk-python) — pip install cohesity-management-sdk
+- [Go SDK](https://github.com/cohesity/go-sdk)
+- [PowerShell Module](https://github.com/cohesity/cohesity-powershell-module) — Install-Module Cohesity.PowerShell
+- [Ansible Collection](https://github.com/cohesity/ansible-collection)
+- [Terraform Provider](https://registry.terraform.io/providers/cohesity/cohesity/latest)
+- [Postman Workspace](https://www.postman.com/cohesity/)
+
+## Security and Compliance
+
+- [Trust Center](https://www.cohesity.com/trust/): SOC 2 Type II, ISO 27001:2022, HIPAA, FedRAMP Moderate, GovRAMP, Common Criteria EAL2+, NIST FIPS 140-2. Responsible disclosure program via Cohesity Security contact.
+
+## Company
+
+- [Website](https://www.cohesity.com/)
+- [Blog](https://www.cohesity.com/blogs/)
+- [Support](https://support.cohesity.com/)
+- [GitHub](https://github.com/cohesity)
+- [Pricing](https://www.cohesity.com/buy/cohesity-data-cloud-packaging/)

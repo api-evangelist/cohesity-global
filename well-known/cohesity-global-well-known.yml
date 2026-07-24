@@ -1,0 +1,29 @@
+generated: '2026-07-18'
+method: searched
+host: https://helios.cohesity.com
+documents:
+- path: /.well-known/openid-configuration
+  status: 200
+  file: cohesity-global-openid-configuration.json
+  note: Genuine OIDC discovery document for the Helios control plane (issuer https://helios.cohesity.com).
+- path: /.well-known/oauth-authorization-server
+  status: 200
+  note: Returns HTTP 200 but serves the SPA HTML shell (soft-200), not an RFC 8414 metadata document; not saved.
+- path: /.well-known/security.txt
+  status: 200
+  note: Soft-200 SPA HTML shell, not an RFC 9116 security.txt; not saved.
+- path: /.well-known/api-catalog
+  status: 200
+  note: Soft-200 SPA HTML shell; not saved.
+- path: /.well-known/ai-plugin.json
+  status: 200
+  note: Soft-200 SPA HTML shell; not saved.
+other_hosts:
+- host: https://my.cohesity.com
+  path: /.well-known/openid-configuration
+  status: 200
+  note: Salesforce Experience Cloud OIDC for the my.cohesity.com customer portal (issuer https://my.cohesity.com);
+    portal identity provider, not the product API surface — not saved as the primary document.
+- host: https://www.cohesity.com
+  path: /.well-known/security.txt
+  status: 404

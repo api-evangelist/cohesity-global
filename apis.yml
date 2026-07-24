@@ -1,8 +1,25 @@
 aid: cohesity-global
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/cohesity-global.png
 name: Cohesity Global
-description: Cohesity Global is a company surfaced as a portfolio company of battery-ventures and added
-  to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment
-  pipeline.
+description: Cohesity is an AI-powered data security and management company whose platform consolidates
+  backup and recovery, cyber resilience, threat defense, and data insights across cloud, on-premises,
+  and SaaS environments. Cohesity exposes RESTful Helios and Cluster APIs alongside first-party Python,
+  Go, PowerShell, Ansible, and Terraform tooling so developers can automate data protection, orchestrate
+  recovery, run reporting, and build custom workflows against 1,000+ supported workloads. Originally
+  surfaced as a portfolio company of Battery Ventures and enriched from Cohesity's public developer
+  surface.
 url: https://raw.githubusercontent.com/api-evangelist/cohesity-global/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -12,12 +29,92 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-18'
 tags:
 - Company
-apis: []
+- Data Security
+- Data Management
+- Backup and Recovery
+- Cyber Resilience
+- Data Protection
+- Disaster Recovery
+- Cloud
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+apis:
+- name: Cohesity Helios and Cluster REST API
+  description: RESTful interface for data management, backup and recovery, cyber resilience, reporting,
+    and site continuity operations across Cohesity Helios (multi-cluster SaaS control plane) and on-premises
+    Cohesity clusters. Authenticated with an API key (Helios) or username/password (cluster).
+  humanURL: https://developer.cohesity.com/
+  baseURL: https://helios.cohesity.com/v2/
+  tags:
+  - Data Management
+  - Backup and Recovery
+  - Data Security
+  properties:
+  - type: Documentation
+    url: https://developer.cohesity.com/apidocs/versions
+  - type: APIReference
+    url: https://developer.cohesity.com/versions.html
+  - type: GettingStarted
+    url: https://developer.cohesity.com/docs/get-started-apps.html
+common:
+- type: DomainSecurity
+  url: security/cohesity-global-domain-security.yml
+- type: Website
+  url: https://www.cohesity.com/
+- type: DeveloperPortal
+  url: https://developer.cohesity.com/
+- type: Documentation
+  url: https://developer.cohesity.com/apidocs/versions
+- type: APIReference
+  url: https://developer.cohesity.com/versions.html
+- type: GettingStarted
+  url: https://developer.cohesity.com/docs/get-started-apps.html
+- type: Support
+  url: https://support.cohesity.com/
+- type: Blog
+  url: https://www.cohesity.com/blogs/
+- type: GitHubOrganization
+  url: https://github.com/cohesity
+- type: Pricing
+  url: https://www.cohesity.com/buy/cohesity-data-cloud-packaging/
+- type: SignUp
+  url: https://my.cohesity.com/s/login/
+- type: TermsOfService
+  url: https://www.cohesity.com/agreements-docs/cohesity-website-terms-of-use.pdf
+- type: PrivacyPolicy
+  url: https://www.cohesity.com/agreements/privacy/
+- type: Postman
+  url: https://www.postman.com/cohesity/
+- type: Packages
+  url: packages/cohesity-global-packages.yml
+- type: SDKs
+  url: packages/cohesity-global-packages.yml
+- type: Authentication
+  url: authentication/cohesity-global-authentication.yml
+- type: OAuthScopes
+  url: scopes/cohesity-global-scopes.yml
+- type: WellKnown
+  url: well-known/cohesity-global-well-known.yml
+- type: Conformance
+  url: conformance/cohesity-global-conformance.yml
+- type: Compliance
+  url: https://www.cohesity.com/trust/
+- type: TrustCenter
+  url: security/cohesity-global-trust-center.yml
+- type: VulnerabilityDisclosure
+  url: security/cohesity-global-vulnerability-disclosure.yml
+- type: Security
+  url: https://www.cohesity.com/trust/
+- type: LLMsTxt
+  url: llms/cohesity-global-llms.txt
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

@@ -1,0 +1,34 @@
+generated: '2026-07-18'
+method: searched
+source: https://helios.cohesity.com/.well-known/openid-configuration
+docs: https://developer.cohesity.com/
+schemes:
+- name: HeliosOAuth2
+  source: https://helios.cohesity.com/.well-known/openid-configuration
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://helios.cohesity.com/oauth2/authorize
+    tokenUrl: https://helios.cohesity.com/oauth2/token
+    revocationUrl: https://helios.cohesity.com/oauth2/revoke
+    grant_types: [authorization_code, refresh_token]
+    pkce: [S256]
+    token_endpoint_auth: [client_secret_basic]
+scopes:
+- scope: openid
+  description: OpenID Connect authentication; issue an ID token for the authenticated user.
+  flows: [authorizationCode]
+- scope: email
+  description: Access the user's email address claim.
+  flows: [authorizationCode]
+- scope: profile
+  description: Access the user's basic profile claims.
+  flows: [authorizationCode]
+- scope: cohesity_user
+  description: Cohesity user-level access to the Helios API.
+  flows: [authorizationCode]
+- scope: cohesity_viewer
+  description: Cohesity read/viewer access to the Helios API.
+  flows: [authorizationCode]
+- scope: cohesity_gaia_viewer
+  description: Cohesity Gaia (AI assistant) viewer access.
+  flows: [authorizationCode]
