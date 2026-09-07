@@ -1,23 +1,6 @@
 generated: '2026-07-18'
 method: searched
 host: https://helios.cohesity.com
-documents:
-- path: /.well-known/openid-configuration
-  status: 200
-  file: cohesity-global-openid-configuration.json
-  note: Genuine OIDC discovery document for the Helios control plane (issuer https://helios.cohesity.com).
-- path: /.well-known/oauth-authorization-server
-  status: 200
-  note: Returns HTTP 200 but serves the SPA HTML shell (soft-200), not an RFC 8414 metadata document; not saved.
-- path: /.well-known/security.txt
-  status: 200
-  note: Soft-200 SPA HTML shell, not an RFC 9116 security.txt; not saved.
-- path: /.well-known/api-catalog
-  status: 200
-  note: Soft-200 SPA HTML shell; not saved.
-- path: /.well-known/ai-plugin.json
-  status: 200
-  note: Soft-200 SPA HTML shell; not saved.
 other_hosts:
 - host: https://my.cohesity.com
   path: /.well-known/openid-configuration
@@ -27,3 +10,28 @@ other_hosts:
 - host: https://www.cohesity.com
   path: /.well-known/security.txt
   status: 404
+hosts:
+- host: https://helios.cohesity.com
+  documents:
+  - path: /.well-known/openid-configuration
+    status: 200
+    file: cohesity-global-openid-configuration.json
+    note: Genuine OIDC discovery document for the Helios control plane (issuer https://helios.cohesity.com).
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    note: Returns HTTP 200 but serves the SPA HTML shell (soft-200), not an RFC 8414 metadata document;
+      not saved.
+  - path: /.well-known/security.txt
+    status: 200
+    note: Soft-200 SPA HTML shell, not an RFC 9116 security.txt; not saved.
+  - path: /.well-known/api-catalog
+    status: 200
+    note: Soft-200 SPA HTML shell; not saved.
+  - path: /.well-known/ai-plugin.json
+    status: 200
+    note: Soft-200 SPA HTML shell; not saved.
+x-shape-fix:
+  converted: '2026-08-20'
+  from: documents
+  note: Rewritten into hosts[] -> documents[], the only shape well_known_docs() in score.rb reads. A served
+    .well-known surface recorded in any other shape scores as absent.
